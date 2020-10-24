@@ -37,13 +37,4 @@ else
    echo "Number above range"
  exit 3
      fi
-     #fi
- #done
- #$IFS=.
-#function thousand {
- #  echo $a thousand
-  #               }
-#function hundred {
- #  echo $b hundred
-  #               }
-
+ 
