@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
  function collatz() {
-#read -n "input an integer :" number
   if (( $number % 2 ))
 then
    a=$(($number*3))
