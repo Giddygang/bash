@@ -65,9 +65,6 @@ function menu_header()
 				
 				exit
                 ;;
-        #    *)
-         #       echo "Invalid option. Please select again."
-          #      ;;
         esac
 	done
 }
@@ -120,9 +117,6 @@ function test_screen()
 		echo "Answer,$answer" >> $output
 		break
 	done
- #   correct_answer=$(echo "$question" | cut -d',' -f1)
-  #  echo 
-
 	# TODO UI for test.
 	# 1. Implement time out
 	# 2. Pick and display random question from question bank
