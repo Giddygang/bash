@@ -23,7 +23,6 @@ function log()
 #	TODO Write activities to log files along with timestamp, pass argument as a string
 #	Todo get current timestamp
 
-
 }
 
 function answer_file_creaton()
@@ -48,7 +47,6 @@ function menu_header()
 	echo " "
 	echo "SELECT AN OPTION BELOW"
 	echo " "
-	#echo "1. SignIn\2. SignUp\3. EXIT" 
 
 	select option in "SignIn" "SignUp" "EXIT"; do
         case $option in
@@ -126,32 +124,24 @@ function test_screen()
 
 function test_menu()
 {
-	echo " "
-	echo "SELECT AN OPTION BELOW 1-3"
-	echo " "
-	read -p "1. TEST SCREEN
-	2. VIEW TAKEN TESTS
-	3. EXIT
-	"  response
-	if [[ $response =~ ^[0-9]$ ]]; then
-    	while [[ $response == "1" ]]; do
-        	test_screen
-			break
-    	done
-    	while [[ $response == "2" ]]; do
-        	view_test_screen
-			break
-    	done
-    	while [[ $response == "3" ]]; do
-        	echo "Exiting test"
-        	return 1
-			exit
-    	done    
-	else
-    	echo "Error: INVALID RESPONSE, SELECT A NUMBER 1-3" 
-    	return 1
-	fi
-
+    select option in "Take Test" "View Test" "Exit"; do
+        case $option in
+            "Take Test")
+                test_screen
+                break
+                ;;
+            "View Test")
+                view_test_screen
+                break
+                ;;
+            "Exit")
+                break
+                    ;;
+            *)
+                echo "Invalid option. Please select again."
+                ;;
+        esac
+    done
 }
 
 function sign_in()
